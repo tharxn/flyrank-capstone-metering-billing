@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/tharxn/flyrank-capstone-metering-billing",
+  "run_url": "https://github.com/tharxn/flyrank-capstone-metering-billing/actions/runs/38945849339",
+  "tested_commit": "56cb3d1b72391d56ae293f07e1488be4fc7e5695",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "test (3.14)",
+      "conclusion": "success"
+    },
+    {
+      "name": "test (3.12)",
+      "conclusion": "success"
+    }
+  ],
+  "proof_lines": [
+    "test (3.14)\tRun python -m ruff check .\t2026-10-16T18:15:05.6852795Z All checks passed!",
+    "test (3.14)\tRun python -m ruff format --check .\t2026-10-16T18:15:05.7247688Z 23 files already formatted",
+    "test (3.14)\tRun python -m app.cli test\t2026-10-16T18:15:12.3700425Z 74 passed, 3 warnings in 4.10s",
+    "test (3.12)\tRun python -m ruff check .\t2026-10-16T18:15:03.4433600Z All checks passed!",
+    "test (3.12)\tRun python -m ruff format --check .\t2026-10-16T18:15:03.4889312Z 23 files already formatted",
+    "test (3.12)\tRun python -m app.cli test\t2026-10-16T18:15:08.3934562Z 74 passed, 3 warnings in 3.70s"
+  ]
+}

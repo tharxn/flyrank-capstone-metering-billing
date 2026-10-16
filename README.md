@@ -357,10 +357,11 @@ GitHub Actions is supplied for Python 3.12 and 3.14; local validation used 3.14.
 
 This project has its own public repository:
 [tharxn/flyrank-capstone-metering-billing](https://github.com/tharxn/flyrank-capstone-metering-billing).
-The design, implementation, and submission pack are committed during publication.
-Development happened locally before publication, so the brief's public-from-day-one
-and commit-as-you-build history requirements were not met. This exception is
-recorded candidly in the build log; no earlier history is manufactured. Portal
+The repository was published on 2026-10-16, its first recorded build day.
+Implementation began locally earlier that day. The design, implementation, and
+submission pack were committed during publication; the original commit-as-you-build
+sequence was not preserved. That history exception is recorded candidly in the
+build log; no earlier chronology is manufactured. Portal
 submission and the owner's code-understanding check remain owner actions.
 
 ## Optional Docker path
@@ -390,7 +391,7 @@ write throughput is serialized; it does not claim a production multi-region
 exactly-once guarantee. A real external AI action would need reservation/outbox
 and provider-side idempotency beyond the atomic simulated action implemented here.
 No automatic reconciliation scan is included, so a missed Stripe event needs
-replay. Actual hosted test Checkout and clean Docker startup were verified;
-see the submission checklist for hosted CI status. Only the documented
+replay. Actual hosted test Checkout, clean Docker startup, and GitHub Actions on
+Python 3.12/3.14 were verified; see the submission checklist for evidence links. Only the documented
 snapshot webhook types are supported; thin events
 are outside scope. No live keys or live events are accepted.

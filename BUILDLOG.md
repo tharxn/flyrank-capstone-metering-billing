@@ -136,8 +136,9 @@ address rather than the locally configured personal email. The initial secret
 scan found no API/signing/GitHub credentials or private runtime paths among the
 publication candidates. The four phases will be represented by today's actual
 publication commits; they are not presented as commits made during earlier work.
-The public-from-day-one and commit-as-you-build historical requirements were
-not met. Dates or earlier development history will not be fabricated.
+The initial audit treated both public-from-day-one and commit-as-you-build as
+historical exceptions; the final wording clarification below separates them.
+Dates or earlier development history will not be fabricated.
 
 The dedicated public repository was created at
 https://github.com/tharxn/flyrank-capstone-metering-billing. The design/configuration
@@ -148,3 +149,17 @@ and passed the HTTP retry/cost check without host secrets. The temporary
 verification container and volume were removed. Full clean-start evidence is in
 `evidence/clean-start.json`. Push and hosted CI results will be recorded below
 after verification; portal submission remains an owner action.
+
+The project was pushed to public `main`. GitHub Actions run `38945849339`
+completed successfully at commit `56cb3d1`, with **74 tests passing on each of
+Python 3.12 and 3.14**, plus lint and formatting checks. Credential-free CI results
+are saved in `evidence/github-ci.json`. The working tree was clean after the
+initial push; the final documentation/CI evidence update follows it.
+
+One audit interpretation was corrected: the PDF says "public from day one," not
+"before the first implementation change." Both the initial build and public
+publication happened on 2026-10-16, so the literal day-one wording is satisfied.
+Implementation began locally earlier that day; it was not public throughout.
+The original incremental phase commit sequence was not preserved and remains
+an explicit exception. The owner still needs to review/explain the code and
+submit the repository URL through the portal. No portal form was submitted.

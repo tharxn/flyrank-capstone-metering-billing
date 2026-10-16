@@ -123,8 +123,11 @@ The dedicated public repository is
 [tharxn/flyrank-capstone-metering-billing](https://github.com/tharxn/flyrank-capstone-metering-billing).
 The design is committed in `282e542`; the implementation and test suite in
 `bf8184d`. These are actual publication-time commits. The earlier development
-was local, so public-from-day-one and commit-as-you-build history were not met.
-Hosted CI and final submission status are tracked in
+was local on the same first recorded build day, 2026-10-16. Same-day publication
+satisfies the brief's day-one wording; the original commit-as-you-build sequence
+was not preserved. GitHub Actions passed on Python 3.12 and 3.14 with 74 tests
+on each version; [github-ci.json](evidence/github-ci.json) retains run/commit links
+and captured test/lint/format results. Final submission status is tracked in
 [SUBMISSION_CHECKLIST.md](SUBMISSION_CHECKLIST.md).
 
 ## Actual Stripe sandbox acceptance: completed

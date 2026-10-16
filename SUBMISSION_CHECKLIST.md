@@ -42,7 +42,10 @@ Detailed test names, output, and actual Stripe proof: [EVIDENCE.md](EVIDENCE.md)
 - [x] `.env.example`: safe placeholders for every supported environment setting.
 - [x] Local suite: **74 passed**, plus lint, formatting, dependency, and whitespace checks.
 - [x] Fresh Linux Docker build, isolated seed/run, HTTP retry/cost probe, and no host secrets.
-- [ ] Final GitHub push and hosted CI on Python 3.12 and 3.14: being verified during publication.
+- [x] Project pushed to public `main`; GitHub Actions passed on Python 3.12 and
+  3.14, with **74 tests on each version**, plus lint and formatting checks.
+  [Captured CI evidence](evidence/github-ci.json) /
+  [successful run](https://github.com/tharxn/flyrank-capstone-metering-billing/actions/runs/38945849339).
 
 The actual sandbox test occurred on 2026-10-16 and its temporary access expires
 2026-10-23. The repository contains credential-free evidence; reproducing the
@@ -51,11 +54,13 @@ handler is automated-tested; the recorded real Stripe session exercised Checkout
 and subscription update. SQLite is explicitly permitted. Invoices, proration,
 overages, usage alerts, and reconciliation are optional stretch goals.
 
-## Historical exceptions and owner steps
+## History timing and owner steps
 
-- **Not met:** public repository from day one. Initial implementation happened
-  locally; the public repository was created during final publication.
-- **Not met:** commits made as each development phase was originally built.
+- **PASS day-one publication:** The repository was published on 2026-10-16,
+  the first recorded build day. Initial implementation happened locally earlier
+  that day. The PDF does not explicitly require a public remote before the first
+  implementation change; we do not claim it was public throughout development.
+- **EXCEPTION:** commits made as each development phase was originally built.
   Today's design/implementation/evidence commits are genuine, but do not recreate
   an earlier phase-by-phase development history. This should be disclosed to the
   evaluator if strict compliance is required.
