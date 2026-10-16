@@ -1,0 +1,20 @@
+{
+  "verified_at": "2026-10-16T18:12:16.699608+00:00",
+  "environment": "Fresh Linux Docker image and isolated empty named volume; no host .env or database mounted",
+  "image_id": "sha256:0ffb335a973221379050af5a879aee22beadc423f476092a3746f7fbd91dfcea",
+  "python": "Python 3.14.8",
+  "runs_as_non_root": true,
+  "seed": "passed",
+  "health": {
+    "status": "ok",
+    "database": "sqlite",
+    "stripe_mode": "test"
+  },
+  "first_http_status": 200,
+  "retry_http_status": 200,
+  "identical_response": true,
+  "usage_events": 1,
+  "cost_micro_usd": 6600,
+  "host_secret_check": "No host secrets in clean container",
+  "temporary_resources_removed": true
+}

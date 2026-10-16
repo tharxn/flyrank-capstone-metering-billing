@@ -1,0 +1,97 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.0.2, pluggy-1.7.0 -- C:\vs\FlyRank AI\flyrank-capstone-metering-billing\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\vs\FlyRank AI\flyrank-capstone-metering-billing
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.15.1
+collecting ... collected 74 items
+
+tests/test_billing.py::test_mock_checkout_to_signed_webhook_upgrades_tenant PASSED [  1%]
+tests/test_billing.py::test_forged_signature_changes_nothing PASSED      [  2%]
+tests/test_billing.py::test_old_signature_is_rejected PASSED             [  4%]
+tests/test_billing.py::test_webhook_replay_has_one_durable_job PASSED    [  5%]
+tests/test_billing.py::test_old_notification_fetches_current_state_instead_of_old_snapshot PASSED [  6%]
+tests/test_billing.py::test_verified_subscription_state_controls_entitlement[active-pro-200] PASSED [  8%]
+tests/test_billing.py::test_verified_subscription_state_controls_entitlement[trialing-pro-200] PASSED [  9%]
+tests/test_billing.py::test_verified_subscription_state_controls_entitlement[past_due-free-402] PASSED [ 10%]
+tests/test_billing.py::test_verified_subscription_state_controls_entitlement[unpaid-free-402] PASSED [ 12%]
+tests/test_billing.py::test_verified_subscription_state_controls_entitlement[canceled-free-200] PASSED [ 13%]
+tests/test_billing.py::test_live_events_and_live_api_keys_are_refused PASSED [ 14%]
+tests/test_billing.py::test_unknown_tenant_and_unhandled_event_are_ignored PASSED [ 16%]
+tests/test_billing.py::test_signed_malformed_data_is_clean_400 PASSED    [ 17%]
+tests/test_billing.py::test_checkout_competing_keys_and_existing_subscription_are_blocked PASSED [ 18%]
+tests/test_billing.py::test_verified_cancellation_allows_new_checkout_and_preserves_old_replay PASSED [ 20%]
+tests/test_billing.py::test_repeated_canceled_notification_does_not_unlock_new_checkout PASSED [ 21%]
+tests/test_billing.py::test_missing_stripe_config_returns_clean_503 PASSED [ 22%]
+tests/test_billing.py::test_worker_retries_then_recovers_and_survives_restart PASSED [ 24%]
+tests/test_billing.py::test_terminal_failure_has_durable_alert_without_secret_logs PASSED [ 25%]
+tests/test_billing.py::test_per_tenant_lease_and_stale_worker_fencing PASSED [ 27%]
+tests/test_billing.py::test_wrong_tenant_or_price_never_grants_pro PASSED [ 28%]
+tests/test_config.py::test_standard_restricted_and_temporary_test_secret_keys_are_accepted[sk_test_] PASSED [ 29%]
+tests/test_config.py::test_standard_restricted_and_temporary_test_secret_keys_are_accepted[rk_test_] PASSED [ 31%]
+tests/test_config.py::test_standard_restricted_and_temporary_test_secret_keys_are_accepted[rkcs_test_] PASSED [ 32%]
+tests/test_config.py::test_live_and_publishable_keys_are_rejected[sk_live_] PASSED [ 33%]
+tests/test_config.py::test_live_and_publishable_keys_are_rejected[rk_live_] PASSED [ 35%]
+tests/test_config.py::test_live_and_publishable_keys_are_rejected[rkcs_live_] PASSED [ 36%]
+tests/test_config.py::test_live_and_publishable_keys_are_rejected[pk_test_] PASSED [ 37%]
+tests/test_config.py::test_live_and_publishable_keys_are_rejected[pk_live_] PASSED [ 39%]
+tests/test_config.py::test_incomplete_or_whitespace_keys_are_rejected[rkcs_test_] PASSED [ 40%]
+tests/test_config.py::test_incomplete_or_whitespace_keys_are_rejected[sk_test_] PASSED [ 41%]
+tests/test_config.py::test_incomplete_or_whitespace_keys_are_rejected[rk_test_] PASSED [ 43%]
+tests/test_config.py::test_incomplete_or_whitespace_keys_are_rejected[rkcs_test_bad key] PASSED [ 44%]
+tests/test_config.py::test_incomplete_or_whitespace_keys_are_rejected[ rkcs_test_abc] PASSED [ 45%]
+tests/test_config.py::test_incomplete_or_whitespace_keys_are_rejected[rkcs_test_abc\n] PASSED [ 47%]
+tests/test_helpers_and_recovery.py::test_saved_event_replay_preserves_id_and_produces_valid_signature[utf-8] PASSED [ 48%]
+tests/test_helpers_and_recovery.py::test_saved_event_replay_preserves_id_and_produces_valid_signature[utf-8-sig] PASSED [ 50%]
+tests/test_helpers_and_recovery.py::test_saved_event_replay_preserves_id_and_produces_valid_signature[utf-16] PASSED [ 51%]
+tests/test_helpers_and_recovery.py::test_stale_worker_cannot_commit_after_replacement_takes_lease PASSED [ 52%]
+tests/test_helpers_and_recovery.py::test_crashed_final_attempt_becomes_dead_with_alert PASSED [ 54%]
+tests/test_metering.py::test_retry_returns_identical_response_and_one_event PASSED [ 55%]
+tests/test_metering.py::test_changed_payload_conflicts_without_new_charge PASSED [ 56%]
+tests/test_metering.py::test_normalized_defaults_are_same_request PASSED [ 58%]
+tests/test_metering.py::test_concurrent_retries_record_exactly_once PASSED [ 59%]
+tests/test_metering.py::test_concurrent_distinct_requests_cannot_overspend_last_call PASSED [ 60%]
+tests/test_metering.py::test_exact_1000_api_call_boundary_and_retry_after PASSED [ 62%]
+tests/test_metering.py::test_token_boundary_and_rejected_request_can_be_retried PASSED [ 63%]
+tests/test_metering.py::test_both_quotas_are_checked_atomically PASSED   [ 64%]
+tests/test_metering.py::test_delinquent_subscription_returns_402[past_due] PASSED [ 66%]
+tests/test_metering.py::test_delinquent_subscription_returns_402[unpaid] PASSED [ 67%]
+tests/test_metering.py::test_delinquent_subscription_returns_402[incomplete] PASSED [ 68%]
+tests/test_metering.py::test_delinquent_subscription_returns_402[incomplete_expired] PASSED [ 70%]
+tests/test_metering.py::test_delinquent_subscription_returns_402[paused] PASSED [ 71%]
+tests/test_metering.py::test_previous_success_replays_after_payment_lapses PASSED [ 72%]
+tests/test_metering.py::test_month_rollover_preserves_historical_idempotency PASSED [ 74%]
+tests/test_persistence.py::test_migrations_and_seed_are_repeatable PASSED [ 75%]
+tests/test_persistence.py::test_usage_persists_across_new_service_instances PASSED [ 77%]
+tests/test_persistence.py::test_database_itself_prevents_duplicate_usage PASSED [ 78%]
+tests/test_pricing_and_validation.py::test_cached_and_reasoning_tokens_are_inclusive_and_integer PASSED [ 79%]
+tests/test_pricing_and_validation.py::test_cached_input_is_cheaper_and_reasoning_does_not_add_cost PASSED [ 81%]
+tests/test_pricing_and_validation.py::test_invalid_token_input_is_clean_422_without_usage[body0] PASSED [ 82%]
+tests/test_pricing_and_validation.py::test_invalid_token_input_is_clean_422_without_usage[body1] PASSED [ 83%]
+tests/test_pricing_and_validation.py::test_invalid_token_input_is_clean_422_without_usage[body2] PASSED [ 85%]
+tests/test_pricing_and_validation.py::test_invalid_token_input_is_clean_422_without_usage[body3] PASSED [ 86%]
+tests/test_pricing_and_validation.py::test_invalid_token_input_is_clean_422_without_usage[body4] PASSED [ 87%]
+tests/test_pricing_and_validation.py::test_invalid_token_input_is_clean_422_without_usage[body5] PASSED [ 89%]
+tests/test_pricing_and_validation.py::test_invalid_token_input_is_clean_422_without_usage[body6] PASSED [ 90%]
+tests/test_pricing_and_validation.py::test_invalid_token_input_is_clean_422_without_usage[body7] PASSED [ 91%]
+tests/test_pricing_and_validation.py::test_invalid_token_input_is_clean_422_without_usage[body8] PASSED [ 93%]
+tests/test_pricing_and_validation.py::test_invalid_token_input_is_clean_422_without_usage[body9] PASSED [ 94%]
+tests/test_pricing_and_validation.py::test_missing_invalid_and_oversized_keys PASSED [ 95%]
+tests/test_pricing_and_validation.py::test_tenant_usage_and_idempotency_keys_are_isolated PASSED [ 97%]
+tests/test_stripe_gateway.py::test_real_sdk_checkout_request_and_subscription_retrieval PASSED [ 98%]
+tests/test_stripe_gateway.py::test_provider_errors_are_sanitized PASSED  [100%]
+
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\vs\FlyRank AI\flyrank-capstone-metering-billing\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+tests/test_stripe_gateway.py::test_real_sdk_checkout_request_and_subscription_retrieval
+tests/test_stripe_gateway.py::test_provider_errors_are_sanitized
+  C:\vs\FlyRank AI\flyrank-capstone-metering-billing\.venv\Lib\site-packages\httpx\_models.py:408: DeprecationWarning: Use 'content=<...>' to upload raw bytes/text content.
+    headers, stream = encode_request(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: C:\vs\FlyRank AI\flyrank-capstone-metering-billing\tmp\test-results.xml -
+======================= 74 passed, 3 warnings in 49.55s =======================

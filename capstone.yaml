@@ -1,0 +1,43 @@
+name: flyrank-capstone-metering-billing
+track: python
+framework: FastAPI
+database: SQLite
+install: python -m pip install -r requirements-dev.txt
+run: python -m app.cli run
+seed: python -m app.cli seed
+test: python -m app.cli test
+base_url: http://localhost:8000
+credentials: data/demo-credentials.json
+authentication:
+  header: X-API-Key
+  tenant: demo-alpha
+endpoints:
+  - method: GET
+    path: /health
+  - method: GET
+    path: /usage
+    authenticated: true
+  - method: POST
+    path: /generate
+    authenticated: true
+    headers:
+      Idempotency-Key: evaluator-request-1
+    body:
+      input_tokens: 1000
+      cached_input_tokens: 400
+      output_tokens: 500
+      reasoning_tokens: 200
+  - method: POST
+    path: /billing/checkout
+    authenticated: true
+    headers:
+      Idempotency-Key: evaluator-checkout-1
+  - method: GET
+    path: /billing/subscription
+    authenticated: true
+  - method: GET
+    path: /billing/jobs
+    authenticated: true
+  - method: POST
+    path: /webhooks/stripe
+    signature_header: Stripe-Signature

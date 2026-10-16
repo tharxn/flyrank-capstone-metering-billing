@@ -1,0 +1,84 @@
+{
+  "verified_at": "2026-10-16T18:00:21.334756+00:00",
+  "sandbox": {
+    "account_id": "acct_1UREftExbfv6mT3S",
+    "expires_at": "2026-10-23",
+    "livemode": false
+  },
+  "checkout": {
+    "session_id": "cs_test_a1r9PkmbpUPghFrftVzLwyZcSmUCZ6SHonPzksadoQZMkC4fkQLgqzXe5m",
+    "status": "complete",
+    "payment_status": "paid",
+    "currency": "usd",
+    "amount_total": 2000,
+    "subscription_id": "sub_1URFPBExbfv6mT3S0uWrpG1B"
+  },
+  "subscription": {
+    "tenant_id": "demo-alpha",
+    "plan_id": "pro",
+    "status": "active",
+    "stripe_customer_id": "cus_VS9izsf5br0WG0",
+    "stripe_subscription_id": "sub_1URFPBExbfv6mT3S0uWrpG1B",
+    "updated_at": "2026-10-16T17:59:00.482531+00:00"
+  },
+  "usage": {
+    "tenant_id": "demo-alpha",
+    "period": "2026-10",
+    "starts_at": "2026-10-01T00:00:00+00:00",
+    "resets_at": "2026-11-01T00:00:00+00:00",
+    "plan": "pro",
+    "subscription_status": "active",
+    "events": 1,
+    "api_calls": {
+      "used": 1,
+      "limit": 10000,
+      "remaining": 9999
+    },
+    "tokens": {
+      "used": 1500,
+      "limit": 1000000,
+      "remaining": 998500,
+      "input_tokens": 1000,
+      "cached_input_tokens": 400,
+      "output_tokens": 500,
+      "reasoning_tokens": 200
+    },
+    "cost": {
+      "currency": "USD",
+      "api_micro_usd": 1000,
+      "tokens_micro_usd": 5600,
+      "total_micro_usd": 6600,
+      "total_usd": "0.006600",
+      "basis": "stored per-event simulated rates"
+    }
+  },
+  "other_tenant": {
+    "tenant_id": "demo-beta",
+    "plan": "free",
+    "api_call_limit": 1000,
+    "token_limit": 100000
+  },
+  "webhook_events": [
+    {
+      "id": "evt_1URFPDExbfv6mT3SxbShiEFo",
+      "type": "checkout.session.completed",
+      "status": "processed"
+    }
+  ],
+  "jobs": {
+    "jobs": [
+      {
+        "id": "0dc3bcc3-8768-4d79-a928-11dfdace9f93",
+        "event_id": "evt_1URFPDExbfv6mT3SxbShiEFo",
+        "status": "done",
+        "attempts": 1,
+        "last_error": null
+      }
+    ],
+    "alerts": []
+  },
+  "listener_delivery": [
+    "2026-10-16 23:28:59   --> checkout.session.completed [evt_1URFPDExbfv6mT3SxbShiEFo]",
+    "2026-10-16 23:28:59  <--  [202] POST http://127.0.0.1:8000/webhooks/stripe [evt_1URFPDExbfv6mT3SxbShiEFo]"
+  ]
+}

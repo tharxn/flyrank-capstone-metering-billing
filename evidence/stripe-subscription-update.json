@@ -1,0 +1,24 @@
+{
+  "source": "Actual test subscription metadata update through Stripe API, delivered by Stripe CLI. No pricing or payment terms changed.",
+  "subscription_id": "sub_1URFPBExbfv6mT3S0uWrpG1B",
+  "remote_status": "active",
+  "livemode": false,
+  "events": [
+    {
+      "id": "evt_1URFSRExbfv6mT3S4MLZuQgf",
+      "type": "customer.subscription.updated",
+      "status": "processed",
+      "job_status": "done",
+      "attempts": 1
+    }
+  ],
+  "local_subscription": {
+    "plan_id": "pro",
+    "status": "active",
+    "stripe_subscription_id": "sub_1URFPBExbfv6mT3S0uWrpG1B"
+  },
+  "listener_delivery": [
+    "2026-10-16 23:32:19   --> customer.subscription.updated [evt_1URFSRExbfv6mT3S4MLZuQgf]",
+    "2026-10-16 23:32:19  <--  [202] POST http://127.0.0.1:8000/webhooks/stripe [evt_1URFSRExbfv6mT3S4MLZuQgf]"
+  ]
+}

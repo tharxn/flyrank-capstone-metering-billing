@@ -1,0 +1,39 @@
+{
+  "event_id": "evt_1URFPDExbfv6mT3SxbShiEFo",
+  "source": "Actual Stripe sandbox checkout.session.completed event retrieved through Stripe API; replay signed locally with the configured listener secret.",
+  "before": {
+    "webhook_events": 1,
+    "jobs": 1
+  },
+  "forged": {
+    "http_status": 400,
+    "body": {
+      "error": {
+        "code": "invalid_signature",
+        "message": "Invalid Stripe webhook signature or payload."
+      }
+    }
+  },
+  "replays": [
+    {
+      "http_status": 200,
+      "body": {
+        "event_id": "evt_1URFPDExbfv6mT3SxbShiEFo",
+        "status": "duplicate",
+        "original_status": "processed"
+      }
+    },
+    {
+      "http_status": 200,
+      "body": {
+        "event_id": "evt_1URFPDExbfv6mT3SxbShiEFo",
+        "status": "duplicate",
+        "original_status": "processed"
+      }
+    }
+  ],
+  "after": {
+    "webhook_events": 1,
+    "jobs": 1
+  }
+}
